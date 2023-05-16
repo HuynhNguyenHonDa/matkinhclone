@@ -1,0 +1,67 @@
+version: '3.4'
+
+x-common-variables: &common-variables
+  DJANGO_SETTINGS_MODULE: core.settings
+  SECRET_KEY: ${SECRET_KEY_LOCAL}
+  POSTGRES_USER: ${POSTGRES_USER_LOCAL}
+  POSTGRES_PASSWORD: ${POSTGRES_PASSWORD_LOCAL}
+  POSTGRES_DB: ${POSTGRES_DB_LOCAL}
+  POSTGRES_HOST: ${POSTGRES_HOST_LOCAL}
+
+services:
+  backend:
+    container_name: backend-django
+    build: ./backend
+    environment: *common-variables
+    ports: 
+      - '8000:8000'
+    volumes:
+      - ./backend:/code
+      - backend_media:/code/media
+      - backend_volume:/code/staticfiles
+    depends_on:
+      - postgres
+
+  postgres:
+    container_name: db-postgres
+    restart: always
+    image: postgres:13.3-alpine
+    environment: *common-variables
+    ports:
+      - "5436:5432"
+    volumes:
+     - postgres_data:/var/lib/postgresql/data/
+
+  frontend:
+    container_name: frontend
+    build: 
+      context: ./frontend
+      args:
+        REACT_APP_ENVIRONMENT: production
+    ports: 
+      - '3000:80'
+    volumes:
+      - './frontend:/app'
+      - '/app/node_modules'
+  
+  nginx:
+    container_name: nginx
+    build:
+      context: .
+      dockerfile: nginx.Dockerfile
+    ports:
+      - 80:80
+    volumes:
+      - backend_volume:/var/www/mywebsite/backend/staticfiles
+      - backend_media:/var/www/mywebsite/backend/media
+      - /var/log/nginx/:/var/log/nginx/
+
+volumes:
+  postgres_data:
+  backend_media:
+  backend_volume:
+
+networks:
+  backend:
+    external: true
+

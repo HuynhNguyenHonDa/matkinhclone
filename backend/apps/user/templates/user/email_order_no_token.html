@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mắt Kính Bảo Tín</title>
+    <style>
+      table, th, td {
+        border:1px solid black;
+      }
+    </style>
+
+</head>
+
+<body>
+Hi {{ user }},
+<br>
+Your phonenumber is : {{ phonenumber }}
+<br>
+Your address is : {{ address }}
+<br>
+Here are your order:
+<br>
+<table style="width:602px;border-collapse:collapse;border-spacing:0;text-align:left;">
+	<tr>
+		<td>Tên sản phẩm</td>
+    <td>Số lượng</td>
+    <td>Màu</td>
+    <td>Đơn giá</td>
+    <td>Thành tiền</td>
+	</tr>
+  {% for product in products %}
+  <tr>
+		<td>{{ product.name }}</td>
+    <td>{{ product.quantity }}</td>
+    <td>{{ product.colors }}</td>
+    <td>{{ product.price }}</td>
+    <td>{{ product.amount }}</td>
+	</tr>
+  {% endfor %}
+  <tr>
+    <td style="text-align:right" colspan="5">Tổng cộng: {{ total }}</td>
+  </tr>
+</table>
+
+</body>
+
+<foot>
+</foot>
+
+</html>
