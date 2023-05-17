@@ -228,7 +228,7 @@ export const ShoppingCart = React.forwardRef((props, ref: any) => {
             value={totalCartPrice}
             displayType={"text"}
             thousandSeparator={true}
-            prefix={"$"}
+            prefix={""}
           />
         </Typography>
         <div

@@ -63,7 +63,7 @@ export const ShoppingCartItem = () => {
                     value={product.price}
                     displayType={"text"}
                     thousandSeparator={true}
-                    prefix={"$"}
+                    prefix={""}
                   />
                 </div>
                 <div className="flex  text-center">
@@ -71,7 +71,7 @@ export const ShoppingCartItem = () => {
                   <input
                     onChange={(e) => handleQuantityChange(e, product)}
                     value={product.quantity}
-                    className="mx-5 text-center w-1/4"
+                    className="mx-5 text-center w-1/4" type="number"
                   ></input>
                 </div>
               </div>

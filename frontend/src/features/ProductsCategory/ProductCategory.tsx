@@ -8,6 +8,8 @@ import {
 import { Spinner } from "../../common/Spinner";
 import { fetchProductByCategoryAsync } from "../../redux/slice/productSlice/productSlice";
 import { useNavigate } from "react-router-dom";
+import { colors } from "@mui/material";
+
 
 export const ProductCategory = () => {
   const dispatch = useAppDispatch();
@@ -34,7 +36,7 @@ export const ProductCategory = () => {
         <div>
           <p className="p-5 text-[#1E90FF] font-bold text-2xl md:text-5xl">
             <div className="h-0.5 w-5/12 m-auto bg-stone-300"></div>
-            <h2 className="p-5">Danh Mục Sản Phẩm</h2>
+            <h2 className="p-5 anh">Danh Mục Sản Phẩm</h2>
             <div className="h-0.5 w-5/12 m-auto bg-stone-300"></div>
           </p>
         </div>

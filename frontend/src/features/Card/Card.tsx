@@ -119,7 +119,7 @@ export const Card = (card: ProductModel, { ...props }) => {
             value={card.price}
             displayType={"text"}
             thousandSeparator={true}
-            prefix={"$"}
+            prefix={""}
           />
         </div>
       </div>
