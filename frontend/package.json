@@ -32,7 +32,7 @@
   },
   "scripts": {
     
-    "start": "set PORT=4000 &&  react-scripts start",
+    "start": "set PORT=4000",
     "build": "dotenv -e .env.production react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
