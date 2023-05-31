@@ -1,0 +1,9 @@
+.heightCustom600px {
+    height: 600px;
+}
+
+@media screen and (max-width:1050px) {
+    .heightCustom600px {
+        height: auto;
+    }
+}

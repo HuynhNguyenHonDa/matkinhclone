@@ -10,6 +10,7 @@ import {
   isAuthenticated,
   logout,
 } from "../../../redux/slice/authenticationSlice/authSlice";
+import './topbar.css';
 import { useAppSelector } from "../../../redux/hooks";
 import { useCickOutside } from "../../../hooks/useClickOutside";
 import { useAppDispatch } from "../../../redux/hooks";
@@ -88,10 +89,10 @@ const TopBar = () => {
           <div className="p-1">
             <BsTelephone />
           </div>
-          <p className="w-40">0983 523 067</p>
+          <p className="w-40 tblack">0983 523 067</p>
         </div>
         <div className="w-full z-0 self-center overflow-hidden">
-          <div className="uppercase text-white font-semibold welcomeAnimation text-xs md:text-md right-0">
+          <div className="uppercase text-black font-semibold welcomeAnimation text-xs md:text-md right-0">
             MẮT KÍNH BẢO TÍN kính chào quý khách
           </div>
         </div>
