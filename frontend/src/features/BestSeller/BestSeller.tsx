@@ -32,9 +32,9 @@ export const BestSeller = () => {
               0,
               !isShowAllBestSellerProd
                 ? 4
-                : bestProds.length < 8
+                : bestProds.length < 20
                 ? bestProds.length
-                : 8
+                : 20
             )
             .map((prod) => {
               return <Card {...prod} />;

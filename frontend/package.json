@@ -31,8 +31,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    
-    "start": "set PORT=4000",
+    "start": "react-scripts start",
     "build": "dotenv -e .env.production react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

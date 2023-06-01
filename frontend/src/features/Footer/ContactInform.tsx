@@ -13,17 +13,18 @@ export const ContactInform = () => {
   }, []);
 
   return (
-    <div className="grid grid-rows-1 text-center p-5 md:p-10">
-      <Typography className="p-5" variant="h3" color="primary" align="center">
+    <div className="grid grid-rows-1 text-center  ">
+      <Typography className="p-5" variant="h3" color="black" align="left">
         Mắt Kính Bảo Tín
       </Typography>
 
       <Typography
-        className=""
+        className="p-6"
         variant="h3"
         fontSize={"medium"}
         color="text.secondary"
-        align="center"
+        align="left"
+        // marginLeft={"10"}
       >
         <Phone /> {contactList?.Phone}
       </Typography>
@@ -39,7 +40,7 @@ export const ContactInform = () => {
           {contactList?.address}
         </a>
       </Typography>
-      <div className="grid grid-cols-3 p-10 gap-10 md:gap-20">
+      <div className="grid grid-cols-3 p-5 gap-10 md:gap-20">
         <a href={contactList?.facebook} target={"_blank"}>
           <img
             className="hover:cursor-pointer w-24 md:w-32 "
@@ -69,7 +70,7 @@ export const ContactInform = () => {
           color="textSecondary"
           align="center"
         >
-          {"Copyright © nvanh31798@gmail.com"}
+          {/* {"Copyright © nvanh31798@gmail.com"} */}
         </Typography>
       </div>
     </div>

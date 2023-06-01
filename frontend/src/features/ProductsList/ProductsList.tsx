@@ -35,9 +35,12 @@ export const ProductList = () => {
     <div className="snap-x py-10">
       {productFilter && productFilter.length > 0 ? (
         <>
-          <p className="p-5 text-[#1E90FF] font-bold text-xl md:text-2xl uppercase">
-            Search Product
-          </p>
+          <Divider className="pt-5" color={"#efebe9"}>
+            <p className="p-5 font-bold text-xl md:text-2xl uppercase text-black">
+            các sản phẩm phù hợp
+            </p>
+          </Divider>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             {!isLoading ? (
               <>
@@ -57,9 +60,14 @@ export const ProductList = () => {
             Search Product
           </p>
           <p className="text-center">Không tìm thấy kết quả!</p> */}
-          <p className="pt-10 md:p-5 text-[#1E90FF] font-bold text-xl md:text-2xl uppercase">
+          <Divider className="pt-5" color={"#efebe9"}>
+            <p className="p-5 font-bold text-xl md:text-2xl uppercase text-black">
+            SẢN PHẨM
+            </p>
+          </Divider>
+          {/* <p className="pt-10 md:p-5 text-[#1E90FF] font-bold text-xl md:text-2xl uppercase">
             Product
-          </p>
+          </p> */}
           <div className="grid md:grid-cols-4 gap-5">
             {!isLoading ? (
               <>
@@ -75,7 +83,7 @@ export const ProductList = () => {
         </>
       )}
       <Divider className="pt-5" color={"#efebe9"}>
-        <p className="p-5 text-[#1E90FF] font-bold text-xl md:text-2xl uppercase">
+        <p className="p-5 font-bold text-xl md:text-2xl uppercase text-black">
           BEST SELLER
         </p>
       </Divider>

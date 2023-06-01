@@ -9,6 +9,7 @@ import { Spinner } from "../../common/Spinner";
 import { fetchProductByCategoryAsync } from "../../redux/slice/productSlice/productSlice";
 import { useNavigate } from "react-router-dom";
 import { colors } from "@mui/material";
+import './ProductCategory.css';
 
 
 export const ProductCategory = () => {
@@ -34,9 +35,9 @@ export const ProductCategory = () => {
     <div className="md:py-10 px-5">
       <div className="p-2 gap-5 text-center justify-items-center">
         <div>
-          <p className="p-5 text-[#1E90FF] font-bold text-2xl md:text-5xl">
+          <p className="p-5 text-black-700 font-bold text-2xl md:text-5xl">
             <div className="h-0.5 w-5/12 m-auto bg-stone-300"></div>
-            <h2 className="p-5 anh">Danh Mục Sản Phẩm</h2>
+            <h2 className="p-5 anh ">Danh Mục Sản Phẩm</h2>
             <div className="h-0.5 w-5/12 m-auto bg-stone-300"></div>
           </p>
         </div>
@@ -58,7 +59,7 @@ export const ProductCategory = () => {
                         backgroundImage: `URL(${Item.image})`,
                       }}
                     ></div>
-                    <div className="font-semibold text-sm md:text-xl absolute bottom-1/2 -translate-x-1/2 left-1/2 text-center p-2 text-orange-400">
+                    <div className="uppercase font-semibold text-sm md:text-xl absolute bottom-1/2 -translate-x-1/2 left-1/2 text-center p-2 text-black-700 text-shadow">
                       {Item.name}
                     </div>
                   </div>
@@ -76,7 +77,7 @@ export const ProductCategory = () => {
                         backgroundImage: `URL(${Item.image})`,
                       }}
                     ></div>
-                    <div className="font-semibold text-sm md:text-xl absolute bottom-1/2 -translate-x-1/2 left-1/2 text-center p-2 text-orange-400">
+                    <div className="text-shadow uppercase font-semibold text-sm md:text-xl absolute bottom-1/2 -translate-x-1/2 left-1/2 text-center p-2 text-black-700">
                       {Item.name}
                     </div>
                   </div>
@@ -94,7 +95,7 @@ export const ProductCategory = () => {
                         backgroundImage: `URL(${Item.image})`,
                       }}
                     ></div>
-                    <div className="font-semibold text-sm md:text-xl absolute bottom-1/2 -translate-x-1/2 left-1/2 text-center p-2 text-orange-400">
+                    <div className="text-shadow uppercase font-semibold text-sm md:text-xl absolute bottom-1/2 -translate-x-1/2 left-1/2 text-center p-2 text-black-700">
                       {Item.name}
                     </div>
                   </div>
@@ -112,7 +113,7 @@ export const ProductCategory = () => {
                         backgroundImage: `URL(${Item.image})`,
                       }}
                     ></div>
-                    <div className="font-semibold text-sm md:text-xl absolute bottom-1/2 -translate-x-1/2 left-1/2 text-center p-2 text-orange-400">
+                    <div className="text-shadow uppercase font-semibold text-sm md:text-xl absolute bottom-1/2 -translate-x-1/2 left-1/2 text-center p-2 text-black-700">
                       {Item.name}
                     </div>
                   </div>
@@ -130,7 +131,7 @@ export const ProductCategory = () => {
                         backgroundImage: `URL(${Item.image})`,
                       }}
                     ></div>
-                    <div className="font-semibold text-sm md:text-xl absolute bottom-1/2 -translate-x-1/2 left-1/2 text-center p-2 text-orange-400">
+                    <div className="text-shadow uppercase font-semibold text-sm md:text-xl absolute bottom-1/2 -translate-x-1/2 left-1/2 text-center p-2 text-black-700">
                       {Item.name}
                     </div>
                   </div>

@@ -137,9 +137,9 @@ export const ProductDetail = () => {
                                 handleProductColorChange(col.label)
                               }
                               className={`${selectedProductColor === col.label
-                                ? "bg-blue-500 text-white"
+                                ? "bg-blue-500 text-black"
                                 : "text-blue-500"
-                                } border-blue-500 border-2 hover:bg-blue-500 hover:text-white text-xs md:text-md`}
+                                } border-blue-500 border-2 hover:bg-blue-500 hover:text-black text-xs md:text-md`}
                             >
                               {col?.label}
                             </p>
@@ -181,11 +181,11 @@ export const ProductDetail = () => {
             </div>
             <button
               onClick={() => handleAddToBag()}
-              className="uppercase mt-5 p-2 m w-full text-xs md:text-md bg-gradient-to-r from-[#ff871e] to-[#df5414] text-white font-semibold rounded-xl"
+              className="uppercase mt-5 p-2 m w-full text-xs md:text-md bg-gradient-to-r from-[#1E90FF] to-[#0b7def] text-black font-semibold rounded-xl"
             >
               Thêm Vào Giỏ Hàng
             </button>
-            {/* <button className="uppercase mt-5 p-2 w-full bg-gradient-to-r from-[#1E90FF] to-[#0978e6] text-white font-semibold rounded-xl">
+            {/* <button className="uppercase mt-5 p-2 w-full bg-gradient-to-r from-[#1E90FF] to-[#0978e6] text-black font-semibold rounded-xl">
               Mua ngay
             </button> */}
           </div>

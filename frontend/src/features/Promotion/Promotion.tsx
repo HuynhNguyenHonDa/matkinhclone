@@ -126,9 +126,9 @@ export const Promotion = () => {
         </FormControl>
         <div
           onClick={() => handleSubmitForm(formValue)}
-          className="border-2 rounded-lg bg-orange-400 p-3 mt-10 text-white uppercase text-center hover:bg-orange-500 hover:cursor-pointer"
+          className="border-2 rounded-lg bg-gradient-to-r from-[#1E90FF] to-[#0b7def] p-3 mt-10 text-blackuppercase text-center  hover:cursor-pointer"
         >
-          Đăng Kí
+          Đăng ký
         </div>
       </div>
     </div>

@@ -51,7 +51,7 @@ const NavBar = () => {
                     {categoryTree?.map((cat) => {
                       return (
                         <div className="">
-                          <h3 className="text-sm p-5 w-full font-semibold md:text-lg">
+                          <h3 className="text-sm  w-full font-semibold md:text-lg">
                             {cat.name}
                           </h3>
                           <ul>
@@ -61,7 +61,7 @@ const NavBar = () => {
                                   onClick={() =>
                                     handleClickOnCategory(child.id ?? 0)
                                   }
-                                  className="text-xs font-normal p-5 hover:text-blue-500 hover:cursor-pointer"
+                                  className="text-xs font-normal p-2 hover:text-blue-500 hover:cursor-pointer"
                                 >
                                   {child.name}
                                 </li>

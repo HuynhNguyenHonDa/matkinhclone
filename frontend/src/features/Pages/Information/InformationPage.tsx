@@ -8,7 +8,7 @@ export const InformationPage = () => {
       <SupperCombo />
       <div className="p5">
         <div className="p-2 gap-5 text-center justify-items-center grid">
-          <p className="p-5 font-thin text-2xl md:text-5xl uppercase">
+          <p className="p-5 font-semibold text-3xl   uppercase ">
             Tin tức mới nhất
           </p>
         </div>

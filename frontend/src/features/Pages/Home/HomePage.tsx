@@ -9,6 +9,7 @@ import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 import { fetchConfigImageAsync } from "../../../redux/slice/configSlice/configSlice";
 import { useNavigate } from "react-router-dom";
 import Carousel from "react-material-ui-carousel";
+import './HomePage.css'
 
 export const HomePage = () => {
   const dispatch = useAppDispatch();
@@ -54,7 +55,7 @@ export const HomePage = () => {
           }}
         ></div>
         <div className="z-10 text-center p-20  hover:cursor-pointer">
-          <p className="uppercase font-semibold text-3xl text-blue-700">
+          <p className="uppercase font-semibold text-2xl text-black-700 text-shadow">
             Chính sách bảo hành
           </p>
         </div>

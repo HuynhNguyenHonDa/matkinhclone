@@ -13,6 +13,7 @@ import {
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { ProductFilterCommand } from "../../api/productFilterApi/productFilterApi";
 import { useNavigate } from "react-router-dom";
+import './ProductFilter.css'
 
 export const ProductFilter = () => {
   const a = useAppSelector((state) => state.productsFilter.selectedFilter);
@@ -110,7 +111,7 @@ export const ProductFilter = () => {
             onClick={() => {
               setIsOpenFilterModal(true);
             }}
-            className="p-5 text-2xl hover:cursor-pointer hover:scale-105 uppercase"
+            className="p-5 font-semibold text-2xl hover:cursor-pointer hover:scale-105 uppercase text-shadow"
           >
             Chọn Kính Phù Hợp
           </p>

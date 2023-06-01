@@ -3,6 +3,7 @@ import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { fetchBlogAsync } from "../../redux/slice/blogSlice/blogSlice";
 import { Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import './BlogList.css'
 
 export const BlogList = () => {
   const blogList = useAppSelector((state) => state.blog.blogs);
@@ -19,32 +20,32 @@ export const BlogList = () => {
 
   return (
     <>
-      <div className="md:p-10 p-5 grid md:grid-cols-2 gap-10 justify-center items-center">
+      <div className="md:p-10 p-5 grid md:grid-cols-1 gap-10 justify-center items-center">
         {blogList &&
           blogList.length > 0 &&
           blogList
-            .slice(0, isShowFull ? blogList.length - 1 : 4)
+            .slice(0, isShowFull ? blogList.length - 1 : 20)
             .map((blog) => {
               return (
                 <>
                   <div
                     onClick={() => handleClickBlog(blog.slug)}
-                    className="flex padding-5 md:gap-5 md:h-56 m-auto hover:cursor-pointer"
+                    className="flex padding-5 md:gap-5 hover:cursor-pointer margin-left"
                   >
-                    <div className="w-32 h-32 md:w-52 md:h-52 overflow-hidden">
+                    <div className=" overflow-hidden ">
                       <Box
                         className="m-auto"
                         component="img"
                         sx={{
-                          height: 500,
-                          maxHeight: { xs: 300, md: 500 },
+                          height: 300,
+                          maxHeight: { xs: 300, md: 300 },
                           maxWidth: { xs: 300, md: 300 },
                         }}
                         alt="The house from the offer."
                         src={blog.thumbnail}
                       ></Box>
                     </div>
-                    <div className="px-5 w-64 md:w-96">
+                    <div className="">
                       <h3 className="font-bold text-sm md:text-xl">
                         {blog.title}
                       </h3>
@@ -63,7 +64,7 @@ export const BlogList = () => {
               );
             })}
       </div>
-      {blogList && blogList.length > 4 && (
+      {blogList && blogList.length > 20 && (
         <p
           onClick={() => {
             setIsShowFull(!isShowFull);

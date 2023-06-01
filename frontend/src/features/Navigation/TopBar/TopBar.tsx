@@ -84,7 +84,7 @@ const TopBar = () => {
 
   return (
     <div className="fixed md:static w-full z-20">
-      <div className="hidden md:flex justify-between p-2 font-light bg-[#1E90FF] text-white overflow-hidden">
+      <div className="hidden md:flex justify-between p-2 font-light bg-[#1E90FF] text-black overflow-hidden">
         <div className="flex justify-between gap-2 self-center px-10">
           <div className="p-1">
             <BsTelephone />
