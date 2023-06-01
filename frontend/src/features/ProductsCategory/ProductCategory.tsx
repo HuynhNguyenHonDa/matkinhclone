@@ -37,7 +37,8 @@ export const ProductCategory = () => {
         <div>
           <p className="p-5 text-black-700 font-bold text-2xl md:text-5xl">
             <div className="h-0.5 w-5/12 m-auto bg-stone-300"></div>
-            <h2 className="p-5 anh ">Danh Mục Sản Phẩm</h2>
+            
+            <h2 className="p-5 font-bold text-xl md:text-2xl uppercase text-black  ">Danh Mục Sản Phẩm</h2>
             <div className="h-0.5 w-5/12 m-auto bg-stone-300"></div>
           </p>
         </div>

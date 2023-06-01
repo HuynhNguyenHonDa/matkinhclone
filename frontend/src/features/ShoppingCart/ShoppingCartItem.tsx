@@ -66,12 +66,12 @@ export const ShoppingCartItem = () => {
                     prefix={""}
                   />
                 </div>
-                <div className="flex  text-center">
+                <div className="flex text-center">
                   <p>Amount:</p>
                   <input
                     onChange={(e) => handleQuantityChange(e, product)}
                     value={product.quantity}
-                    className="mx-5 text-center w-1/4" type="number"
+                    className="mx-5 text-center w-1/4 hover:none" type="number"  name="quantity" min="1"
                   ></input>
                 </div>
               </div>

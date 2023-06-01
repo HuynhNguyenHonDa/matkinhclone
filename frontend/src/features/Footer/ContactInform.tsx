@@ -4,6 +4,7 @@ import { Phone } from "@mui/icons-material";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { fetchContactAsync } from "../../redux/slice/contactSlice/contactSlice";
 import { useEffect } from "react";
+import './ContactInform.css'
 
 export const ContactInform = () => {
   const contactList = useAppSelector((state) => state.contact.contact);
@@ -13,8 +14,8 @@ export const ContactInform = () => {
   }, []);
 
   return (
-    <div className="grid grid-rows-1 text-center  ">
-      <Typography className="p-5" variant="h3" color="black" align="left">
+    <div className="grid grid-rows-1 text-center ">
+      <Typography className="p-5" variant="h3" color="black" align="left" fontSize="35px" >
         Mắt Kính Bảo Tín
       </Typography>
 

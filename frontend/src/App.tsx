@@ -21,8 +21,8 @@ function App() {
       <NavBar />
       <Outlet />
       {/* <Divider color={"#efebe9"} /> */}
-      <div className="mt-10">
-        <Divider className="font-light uppercase text-lg p-5" color={"inherit"}>
+      <div className="mt0">
+        <Divider className="p-5 font-bold text-xl md:text-2xl uppercase text-black" color={"inherit"}>
           thông tin Mắt Kính Bảo Tín
         </Divider>
         <Footer />

@@ -6,6 +6,7 @@ import { fetchTreeCategoryAsync } from "../../../redux/slice/categorySlice/categ
 import { fetchProductByCategoryAsync } from "../../../redux/slice/productSlice/productSlice";
 import LeftNav from "./LeftNav";
 import RightNav from "./RightNav";
+import './NavBar.css'
 
 const NavBar = () => {
   const [isHovering, setIsHovering] = useState(false);
@@ -61,10 +62,12 @@ const NavBar = () => {
                                   onClick={() =>
                                     handleClickOnCategory(child.id ?? 0)
                                   }
-                                  className="text-xs font-normal p-2 hover:text-blue-500 hover:cursor-pointer"
+                                  className="text-xs font-semibold p-2 hover:text-blue-500 hover:cursor-pointer "
                                 >
                                   {child.name}
+                                  <br></br>
                                 </li>
+                                
                               );
                             })}
                           </ul>
