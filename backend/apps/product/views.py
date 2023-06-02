@@ -330,7 +330,7 @@ class OrderAPIView(APIView):
             use_tls=True,
             timeout=10)
         message = get_template('user/email_order.html').render(context, request)
-        email_admin = EmailReceiveOrder.objects.all().values_list('email', flat=True)
+        email_admin = EmailReceiveOrder.objects.all()
         mail = EmailMessage(
             subject="Order confirmation",
             body=message,
