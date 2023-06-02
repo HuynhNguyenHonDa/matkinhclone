@@ -32,20 +32,21 @@ export const BlogList = () => {
                     onClick={() => handleClickBlog(blog.slug)}
                     className="flex padding-5 md:gap-5 hover:cursor-pointer margin-left"
                   >
-                    <div className=" overflow-hidden ">
+                    <div className="overflow-hidden ">
                       <Box
                         className="m-auto"
                         component="img"
                         sx={{
                           height: 300,
-                          maxHeight: { xs: 300, md: 300 },
-                          maxWidth: { xs: 300, md: 300 },
+                          maxHeight: { xs: 170, md: 170 },
+                          // maxWidth: { xs: 300, md: 300 },
+                          width: {xs: 620, md: 620}
                         }}
                         alt="The house from the offer."
                         src={blog.thumbnail}
                       ></Box>
                     </div>
-                    <div className="">
+                    <div className="ml-5">
                       <h3 className="font-bold text-sm md:text-xl">
                         {blog.title}
                       </h3>
