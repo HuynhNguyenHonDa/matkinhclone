@@ -40,7 +40,7 @@ export const BlogList = () => {
                           height: 300,
                           maxHeight: { xs: 170, md: 170 },
                           // maxWidth: { xs: 300, md: 300 },
-                          width: {xs: 620, md: 620}
+                          width: {xs: 350, md: 350}
                         }}
                         alt="The house from the offer."
                         src={blog.thumbnail}
