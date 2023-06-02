@@ -5,7 +5,6 @@ from django.core.mail import send_mail
 
 
 class EmailUtils(object):
-
     def send_order_email(self, receiver_info: dict):
         subject = 'Email thông báo mua hàng'
         message = f'Hi {receiver_info.get("name", "khách hàng")}, HPNY 2023'
