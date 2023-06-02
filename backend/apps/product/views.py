@@ -403,12 +403,14 @@ class OrderAPIViewNoToken(APIView):
             use_tls=True,
             timeout=10)
         message = get_template('user/email_order_no_token.html').render(context, request)
-        email_admin = EmailReceiveOrder.objects.all()
+        # email_admin = EmailReceiveOrder.objects.all()
+        email_admin = [x for x in EmailReceiveOrder.objects.all()]
         mail = EmailMessage(
             subject="Order confirmation",
             body=message,
             to=[
-                email_admin,
+                # email_admin,
+                *email_admin,
                 serializer.data["email"]
             ],
             connection=backend
