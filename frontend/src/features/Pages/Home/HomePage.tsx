@@ -44,11 +44,11 @@ export const HomePage = () => {
       <ProductFilter />
       <SupperCombo />
       <div
-        className="overflow-hidden my-10 relative h-96 items-center flex"
+        className="overflow-hidden my-10 relative h-96 items-center flex h-full"
         onClick={handleInsuranceNavigate}
       >
         <div
-          className={`justify-center bg-no-repeat bg-cover bg-center absolute h-full w-full opacity-70 hover:cursor-pointer`}
+          className={`justify-center bg-no-repeat bg-cover bg-center absolute h-full w-full object-cover  opacity-70 hover:cursor-pointer `}
           style={{
             // backgroundImage: `URL(${Item.image})`,
             backgroundImage: `URL(${insuranceBackgroundImage})`,

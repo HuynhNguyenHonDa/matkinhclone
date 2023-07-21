@@ -52,10 +52,10 @@ export const ProductCategory = () => {
                 return (
                   <div
                     onClick={() => handleCategoriesClick(Item.id ?? 0)}
-                    className="col-span-4 row-span-4 overflow-hidden shadow-xl rounded-lg relative hover:cursor-pointer"
+                    className="w-full h-full object-cover col-span-4 row-span-4 overflow-hidden shadow-xl rounded-lg relative hover:cursor-pointer"
                   >
                     <div
-                      className={`rounded-lg overflow-hidden justify-center bg-no-repeat bg-cover bg-center absolute h-full w-full hover:scale-125`}
+                      className={`w-full h-full object-cover img-fluid rounded-lg overflow-hidden justify-center bg-no-repeat bg-cover bg-center absolute h-full w-full object-cover hover:scale-125`}
                       style={{
                         backgroundImage: `URL(${Item.image})`,
                       }}
@@ -70,10 +70,10 @@ export const ProductCategory = () => {
                 return (
                   <div
                     onClick={() => handleCategoriesClick(Item.id ?? 0)}
-                    className="col-span-3 row-span-2 overflow-hidden shadow-xl rounded-lg relative hover:cursor-pointer"
+                    className="img-fluid col-span-3 row-span-2 overflow-hidden shadow-xl rounded-lg relative hover:cursor-pointer"
                   >
                     <div
-                      className={`rounded-lg overflow-hidden justify-center bg-no-repeat hover:scale-125 bg-cover bg-center absolute h-full w-full`}
+                      className={`img-fluid rounded-lg overflow-hidden justify-center bg-no-repeat hover:scale-125 bg-cover bg-center absolute w-full h-full object-cover`}
                       style={{
                         backgroundImage: `URL(${Item.image})`,
                       }}
@@ -88,10 +88,10 @@ export const ProductCategory = () => {
                 return (
                   <div
                     onClick={() => handleCategoriesClick(Item.id ?? 0)}
-                    className="col-span-3 row-span-2 overflow-hidden shadow-xl rounded-lg relative hover:cursor-pointer"
+                    className="col-span-3 row-span-2 overflow-hidden shadow-xl rounded-lg relative hover:cursor-pointer w-full h-full object-cover"
                   >
                     <div
-                      className={`rounded-lg  overflow-hidden justify-center bg-no-repeat bg-cover bg-center hover:scale-125 absolute h-full w-full`}
+                      className={`rounded-lg  overflow-hidden justify-center bg-no-repeat bg-cover bg-center hover:scale-125 absolute w-full h-full object-cover`}
                       style={{
                         backgroundImage: `URL(${Item.image})`,
                       }}
@@ -106,10 +106,10 @@ export const ProductCategory = () => {
                 return (
                   <div
                     onClick={() => handleCategoriesClick(Item.id ?? 0)}
-                    className="col-span-2 row-span-2 overflow-hidden shadow-xl rounded-lg relative hover:cursor-pointer"
+                    className="col-span-2 row-span-2 overflow-hidden shadow-xl rounded-lg relative hover:cursor-pointer w-full h-full object-cover"
                   >
                     <div
-                      className={`rounded-lg  overflow-hidden justify-center bg-no-repeat bg-cover bg-center absolute h-full w-full hover:scale-125`}
+                      className={`rounded-lg  overflow-hidden justify-center bg-no-repeat bg-cover bg-center absolute h-full w-full hover:scale-125 w-full h-full object-cover`}
                       style={{
                         backgroundImage: `URL(${Item.image})`,
                       }}
@@ -124,10 +124,10 @@ export const ProductCategory = () => {
                 return (
                   <div
                     onClick={() => handleCategoriesClick(Item.id ?? 0)}
-                    className="col-span-2 row-span-2 overflow-hidden shadow-xl rounded-lg relative hover:cursor-pointer"
+                    className="col-span-2 row-span-2 overflow-hidden shadow-xl rounded-lg relative hover:cursor-pointer w-full h-full object-cover"
                   >
                     <div
-                      className={`rounded-lg  overflow-hidden justify-center bg-no-repeat bg-cover bg-center absolute h-full w-full hover:scale-125`}
+                      className={`rounded-lg  overflow-hidden justify-center bg-no-repeat bg-cover bg-center absolute h-full w-full hover:scale-125 w-full h-full object-cover`}
                       style={{
                         backgroundImage: `URL(${Item.image})`,
                       }}

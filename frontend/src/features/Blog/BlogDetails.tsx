@@ -14,9 +14,9 @@ export const BlogDetails = () => {
   }, [getParams.slug]);
   return (
     <div className="m-auto text-center">
-      <div className="overflow-hidden relative h-96 items-center ">
+      <div className="overflow-hidden relative h-96 items-center  w-full">
         <div
-          className={`justify-center bg-no-repeat bg-cover bg-center absolute h-full w-full`}
+          className={`justify-center bg-no-repeat bg-cover bg-center absolute h-full w-full object-cover`}
           style={{
             backgroundImage: `URL(${blogDetail?.thumbnail})`,
           }}

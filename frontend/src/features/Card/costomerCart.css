@@ -1,0 +1,17 @@
+.costomerCart{
+    max-width: 0 !important;
+    max-height: 0 !important; 
+}
+
+.sdads{
+    margin-left: -6%;
+}
+
+
+@media (min-width: 900px) {
+.css-gybtan {
+    max-height: 0px;
+    max-width: 0px;
+}
+}
+

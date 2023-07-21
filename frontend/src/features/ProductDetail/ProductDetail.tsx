@@ -72,9 +72,9 @@ export const ProductDetail = () => {
       {isLoading ? (
         <Spinner />
       ) : (
-        <div className=" md:flex py-16 p-2 md:pt-20">
-          <div className="md:w-full heightCustom600px grid grid-cols-4 grid-flow-col md:grid-rows-5 gap-14">
-            <div className="h-full md:col-span-4 col-span-3 row-span-4 justify-center bg-no-repeat bg-cover bg-center"
+        <div className="h-full md:flex py-16 p-2 md:pt-20">
+          <div className="h-full md:w-full heightCustom600px grid grid-cols-4 grid-flow-col md:grid-rows-5 gap-14">
+            <div className="w-full h-full object-cover  md:col-span-4 col-span-3 row-span-4 justify-center bg-no-repeat bg-cover bg-center "
               style={{
                 // backgroundImage: `URL(${Item.image})`,
                 backgroundImage: `URL(${currentThumbnail})`,
@@ -149,6 +149,7 @@ export const ProductDetail = () => {
                     )}
                   </div>
                 </div>
+
                 <div className="flex text-xs md:text-md">
                   <p className="uppercase">Số lượng:</p>
                   <p className="uppercase px-5 md:px-20 text-center">
@@ -157,14 +158,33 @@ export const ProductDetail = () => {
                     )?.quantity ?? "Not Found"}
                   </p>
                 </div>
+
+                
+
                 <div className="flex text-xs md:text-md">
                   <p className="uppercase py-5">giá:</p>
                   <p className="py-5 px-5 md:px-20 text-center">
                     {priceCalculator()}
                   </p>
                 </div>
+
                 <div className="flex text-xs md:text-md">
-                  <p className="uppercase py-5">Mô tả:</p>
+                  <p className="uppercase mota">Mô tả:</p>
+                  <p className=" px-5 md:px-20 text-center">
+                  {selectedProducts?.content ? (
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: selectedProducts?.content,
+                        }}
+                      ></div>
+                    ) : (
+                      <></>
+                    )}
+                  </p>
+                </div>
+
+                {/* <div className="flex text-xs md:text-md ">
+                  <p className="uppercase py-5 mota text-center">Mô tả:</p>
                   <p className="py-5 px-5 md:px-20 text-justify">
                     {selectedProducts?.content ? (
                       <div
@@ -176,7 +196,7 @@ export const ProductDetail = () => {
                       <></>
                     )}
                   </p>
-                </div>
+                </div> */}
               </div>
             </div>
             <button

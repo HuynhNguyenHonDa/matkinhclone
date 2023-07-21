@@ -19,11 +19,11 @@ export const SupperCombo = () => {
   }, [blog?.length]);
 
   return (
-    <div className="overflow-hidden border-2 relative p-10 items-center flex">
+    <div className="overflow-hidden border-2 relative p-10 items-center flex h-full">
       {blog && blog.length > 0 && blog[0].body && (
         <>
           <div
-            className={`justify-center bg-no-repeat bg-cover bg-center absolute h-full w-full `}
+            className={`justify-center bg-no-repeat bg-cover bg-center absolute h-full w-full object-cover`}
             style={{
               backgroundImage: `URL(${blog[0].thumbnail})`,
             }}

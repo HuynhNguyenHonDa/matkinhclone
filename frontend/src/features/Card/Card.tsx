@@ -87,7 +87,7 @@ export const Card = (card: ProductModel, { ...props }) => {
           component="img"
           sx={{
             height: 400,
-            maxHeight: { xs: 300, md: 400 },
+            maxHeight: { xs: 300, md: 340 },
             maxWidth: { xs: 300, md: 500 },
           }}
           alt="The house from the offer."
@@ -101,9 +101,7 @@ export const Card = (card: ProductModel, { ...props }) => {
               {card.name}
             </span>
           </div>
-          <div>{RadioButtonsGroup(card.colors)}</div>
-        </div>
-        <div className="font-thin text-xs md:text-md p-3">
+          <div className="font-thin text-xs md:text-md p-3">
           <div>
               {!!card.origin_price && card.origin_price !== 0 && (
                 <NumericFormat
@@ -111,17 +109,23 @@ export const Card = (card: ProductModel, { ...props }) => {
                   value={card.origin_price}
                   displayType={"text"}
                   thousandSeparator={true}
+                  suffix={" VND"}
                 />
               )}
-          </div>
-          <NumericFormat
+              <NumericFormat
             className=""
             value={card.price}
             displayType={"text"}
             thousandSeparator={true}
-            prefix={""}
+            // prefix={""}
+            suffix={" VND"}
           />
+          </div>
+          
         </div>
+          <div>{RadioButtonsGroup(card.colors)}</div>
+        </div>
+        
       </div>
       <div
         onClick={handleAddToBag}
