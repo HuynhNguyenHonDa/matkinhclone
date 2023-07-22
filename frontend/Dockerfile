@@ -6,7 +6,8 @@ WORKDIR /app
 COPY . ./
 COPY package*.json ./
 COPY tsconfig.json ./
-RUN npm install --dev typescript && npm install
+# RUN npm install --dev typescript && npm install
+RUN npm install --also=dev typescript && npm install
 
 ARG REACT_APP_HOST_IP_ADDRESS
 
