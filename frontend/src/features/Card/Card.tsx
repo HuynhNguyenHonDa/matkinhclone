@@ -8,6 +8,7 @@ import { useAppDispatch } from "../../redux/hooks";
 import { addMoreProduct } from "../../redux/slice/shoppingCartSlice/shoppingCartSlice";
 import { ProductOrderedModel } from "../../models/productOrdered";
 import { ProductColorModel } from "../../models/productColor";
+import { SnackbarCustom } from "../../shareComponent/SnackBarCustom";
 
 export const Card = (card: ProductModel, { ...props }) => {
   const navigate = useNavigate();
@@ -23,6 +24,8 @@ export const Card = (card: ProductModel, { ...props }) => {
     }
   }, []);
 
+  const [openSackBar, setOpenSackBar] = useState(false);
+
   const handleAddToBag = () => {
     const productOrdered: ProductOrderedModel = {
       id: card.id,
@@ -32,7 +35,7 @@ export const Card = (card: ProductModel, { ...props }) => {
       colors: currentColor,
       price: card.price,
     };
-
+    setOpenSackBar(true)
     dispatch(addMoreProduct(productOrdered));
   };
 
@@ -78,6 +81,8 @@ export const Card = (card: ProductModel, { ...props }) => {
     );
   };
 
+  
+
   return (
     <div className="hover:cursor-pointer p-2 md:p-5 py-5 m-auto w-full overflow-hidden shadow-xl rounded-2xl">
       <div className="overflow-hidden">
@@ -109,7 +114,7 @@ export const Card = (card: ProductModel, { ...props }) => {
                   value={card.origin_price}
                   displayType={"text"}
                   thousandSeparator={true}
-                  suffix={" VND"}
+                  suffix={" vnđ"}
                 />
               )}
               <NumericFormat
@@ -118,7 +123,7 @@ export const Card = (card: ProductModel, { ...props }) => {
             displayType={"text"}
             thousandSeparator={true}
             // prefix={""}
-            suffix={" VND"}
+            suffix={" vnđ"}
           />
           </div>
           
@@ -131,8 +136,12 @@ export const Card = (card: ProductModel, { ...props }) => {
         onClick={handleAddToBag}
         className={`uppercase p-2 text-center w-5/6 m-auto bg-gradient-to-r from-[#1E90FF] to-[#0b7def] text-white font-semibold rounded-xl`}
       >
-        <span className="">Thêm vào giỏ</span>
-      </div>
+        <span className="">Thêm vào giỏ hàng </span>
+
+       
+      </div> 
+      <SnackbarCustom open={openSackBar} onClose={() => setOpenSackBar(false)}
+              duration={2000} severity="success" />
     </div>
   );
 };

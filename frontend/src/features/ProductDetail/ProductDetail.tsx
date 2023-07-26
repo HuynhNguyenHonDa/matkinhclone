@@ -6,11 +6,21 @@ import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { getProductByIdAsync } from "../../redux/slice/productSlice/productSlice";
 import { addMoreProduct } from "../../redux/slice/shoppingCartSlice/shoppingCartSlice";
 import { CarouselCustom } from "../../shareComponent/Carousel";
+import Button from '@mui/material/Button';
+import Snackbar from '@mui/material/Snackbar';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 import './productdetail.css';
+import { SnackbarCustom } from "../../shareComponent/SnackBarCustom";
+import { duration } from "@mui/material";
+
+
 export const ProductDetail = () => {
   const dispatch = useAppDispatch();
   const [isLoading, setisLoading] = useState(false);
+  const [openSackBar, setOpenSackBar] = useState(false);
   const loadingStatus = useAppSelector((state) => state.product.status);
+
 
   const handleAddToBag = () => {
     const productOrdered: ProductOrderedModel = {
@@ -21,7 +31,9 @@ export const ProductDetail = () => {
       colors: selectedProductColor,
       price: selectedProducts?.price,
     };
+
     dispatch(addMoreProduct(productOrdered));
+    setOpenSackBar(true)
   };
   const selectedProducts = useAppSelector(
     (state) => state.product.selectedProduct
@@ -66,7 +78,36 @@ export const ProductDetail = () => {
   const handleProductColorChange = (label: string) => {
     setSelectedProductColor(label);
   };
+  /////////////////////////////////////
+  const [open, setOpen] = React.useState(false);
 
+  const handleClick = () => {
+    setOpen(true);
+  };
+  const handleClose = (event: React.SyntheticEvent | Event, reason?: string) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
+
+  const action = (
+    <React.Fragment>
+      <Button color="secondary" size="small" onClick={handleClose}>
+        UNDO
+      </Button>
+      <IconButton
+        size="small"
+        aria-label="close"
+        color="inherit"
+        onClick={handleClose}
+      >
+        <CloseIcon fontSize="small" />
+      </IconButton>
+    </React.Fragment>
+  );
+  ////////////////////////////
   return (
     <div>
       {isLoading ? (
@@ -159,7 +200,7 @@ export const ProductDetail = () => {
                   </p>
                 </div>
 
-                
+
 
                 <div className="flex text-xs md:text-md">
                   <p className="uppercase py-5">giá:</p>
@@ -171,7 +212,7 @@ export const ProductDetail = () => {
                 <div className="flex text-xs md:text-md">
                   <p className="uppercase mota">Mô tả:</p>
                   <p className=" px-5 md:px-20 text-center">
-                  {selectedProducts?.content ? (
+                    {selectedProducts?.content ? (
                       <div
                         dangerouslySetInnerHTML={{
                           __html: selectedProducts?.content,
@@ -203,14 +244,14 @@ export const ProductDetail = () => {
               onClick={() => handleAddToBag()}
               className="uppercase mt-5 p-2 m w-full text-xs md:text-md bg-gradient-to-r from-[#1E90FF] to-[#0b7def] text-black font-semibold rounded-xl"
             >
-              Thêm Vào Giỏ Hàng
+              Thêm Vào Giỏ Hàng detail
             </button>
-            {/* <button className="uppercase mt-5 p-2 w-full bg-gradient-to-r from-[#1E90FF] to-[#0978e6] text-black font-semibold rounded-xl">
-              Mua ngay
-            </button> */}
+            <SnackbarCustom open={openSackBar} onClose={() => setOpenSackBar(false)}
+              duration={2000} severity="success" />
           </div>
         </div>
       )}
+
     </div>
   );
 };
