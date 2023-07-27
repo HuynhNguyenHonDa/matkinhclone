@@ -92,8 +92,10 @@ export const Card = (card: ProductModel, { ...props }) => {
           component="img"
           sx={{
             height: 400,
-            maxHeight: { xs: 300, md: 340 },
-            maxWidth: { xs: 300, md: 500 },
+            maxHeight: { xs: 300, },
+            maxWidth: { xs: 300, },
+            // maxHeight: { xs: 300, md: 340 },
+            // maxWidth: { xs: 300, md: 500 },
           }}
           alt="The house from the offer."
           src={card.thumbnail}
