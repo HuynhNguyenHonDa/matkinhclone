@@ -57,9 +57,8 @@ export const Card = (card: ProductModel, { ...props }) => {
                 return (
                   <div
                     onClick={(e) => handleColorClick(e)}
-                    className={`p-2 px-5 border-2 text-center md:text-md text-xs ml-1 ${
-                      currentColor === color ? "bg-blue-500 text-white" : ""
-                    }`}
+                    className={`p-2 px-5 border-2 text-center md:text-md text-xs ml-1 ${currentColor === color ? "bg-blue-500 text-white" : ""
+                      }`}
                   >
                     {color}
                   </div>
@@ -68,9 +67,8 @@ export const Card = (card: ProductModel, { ...props }) => {
               return (
                 <div
                   onClick={(e) => handleColorClick(e)}
-                  className={`p-2 px-5 border-2 text-center md:text-md text-xs ${
-                    currentColor === color ? "bg-blue-500 text-white" : ""
-                  }`}
+                  className={`p-2 px-5 border-2 text-center md:text-md text-xs ${currentColor === color ? "bg-blue-500 text-white" : ""
+                    }`}
                 >
                   {color}
                 </div>
@@ -81,7 +79,7 @@ export const Card = (card: ProductModel, { ...props }) => {
     );
   };
 
-  
+
 
   return (
     <div className="hover:cursor-pointer p-2 md:p-5 py-5 m-auto w-full overflow-hidden shadow-xl rounded-2xl">
@@ -109,7 +107,7 @@ export const Card = (card: ProductModel, { ...props }) => {
             </span>
           </div>
           <div className="font-thin text-xs md:text-md p-3">
-          <div>
+            <div>
               {!!card.origin_price && card.origin_price !== 0 && (
                 <NumericFormat
                   className="text-red-500 line-through px-1"
@@ -120,19 +118,19 @@ export const Card = (card: ProductModel, { ...props }) => {
                 />
               )}
               <NumericFormat
-            className=""
-            value={card.price}
-            displayType={"text"}
-            thousandSeparator={true}
-            // prefix={""}
-            suffix={" vnđ"}
-          />
+                className=""
+                value={card.price}
+                displayType={"text"}
+                thousandSeparator={true}
+                // prefix={""}
+                suffix={" vnđ"}
+              />
+            </div>
+
           </div>
-          
-        </div>
           <div>{RadioButtonsGroup(card.colors)}</div>
         </div>
-        
+
       </div>
       <div
         onClick={handleAddToBag}
@@ -140,10 +138,10 @@ export const Card = (card: ProductModel, { ...props }) => {
       >
         <span className="">Thêm vào giỏ hàng </span>
 
-       
-      </div> 
+
+      </div>
       <SnackbarCustom open={openSackBar} onClose={() => setOpenSackBar(false)}
-              duration={2000} severity="success" />
+        duration={2000} severity="success" />
     </div>
   );
 };

@@ -114,8 +114,8 @@ export const ProductDetail = () => {
         <Spinner />
       ) : (
         <div className="h-full md:flex py-16 p-2 md:pt-20">
-          <div className="h-full md:w-full heightCustom600px grid grid-cols-4 grid-flow-col md:grid-rows-5 gap-14">
-            <div className="w-full h-full object-cover  md:col-span-4 col-span-3 row-span-4 justify-center bg-no-repeat bg-cover bg-center "
+          <div className="md:w-1/2 grid grid-cols-4 grid-flow-col md:grid-rows-5 gap-2">
+            <div className="h-60 md:h-full md:col-span-4 col-span-3 row-span-4 justify-center bg-no-repeat bg-cover bg-center"
               style={{
                 // backgroundImage: `URL(${Item.image})`,
                 backgroundImage: `URL(${currentThumbnail})`,
@@ -210,8 +210,8 @@ export const ProductDetail = () => {
                 </div>
 
                 <div className="flex text-xs md:text-md">
-                  <p className="uppercase mota">Mô tả:</p>
-                  <p className=" px-5 md:px-20 text-center">
+                  <p className="uppercase mota">Mô tả chi tiết:</p>
+                  <p className=" px-5 md:px-20">
                     {selectedProducts?.content ? (
                       <div
                         dangerouslySetInnerHTML={{
