@@ -244,7 +244,7 @@ export const ProductDetail = () => {
               onClick={() => handleAddToBag()}
               className="uppercase mt-5 p-2 m w-full text-xs md:text-md bg-gradient-to-r from-[#1E90FF] to-[#0b7def] text-black font-semibold rounded-xl"
             >
-              Thêm Vào Giỏ Hàng detail
+              Thêm Vào Giỏ Hàng
             </button>
             <SnackbarCustom open={openSackBar} onClose={() => setOpenSackBar(false)}
               duration={2000} severity="success" />
