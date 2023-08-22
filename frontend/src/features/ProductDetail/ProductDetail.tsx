@@ -12,7 +12,9 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import './productdetail.css';
 import { SnackbarCustom } from "../../shareComponent/SnackBarCustom";
-import { duration } from "@mui/material";
+import { Box, duration } from "@mui/material";
+import InnerImageZoom from "react-inner-image-zoom";
+import 'react-inner-image-zoom/lib/InnerImageZoom/styles.min.css';
 
 
 export const ProductDetail = () => {
@@ -115,18 +117,15 @@ export const ProductDetail = () => {
       ) : (
         <div className="h-full md:flex py-16 p-2 md:pt-20">
           <div className="md:w-1/2 grid grid-cols-4 grid-flow-col md:grid-rows-5 gap-2">
-            <div className="h-60 md:h-full md:col-span-4 col-span-3 row-span-4 justify-center bg-no-repeat bg-cover bg-center"
-              style={{
-                // backgroundImage: `URL(${Item.image})`,
-                backgroundImage: `URL(${currentThumbnail})`,
-              }}>
+            <div className="border-2 border-withe-600 h-60 md:h-full md:col-span-4 col-span-3 row-span-4 justify-center bg-no-repeat bg-cover bg-center">
+              <InnerImageZoom src={currentThumbnail ?? ""} zoomSrc={currentThumbnail ?? ""} zoomScale={1 ?? ""}/>
             </div>
             {selectedProducts?.images.slice(0, 3).map((img, index) => {
               if (index === 0) {
                 return (
                   <>
                     <div
-                      className="justify-center bg-no-repeat bg-cover bg-center"
+                      className="justify-center bg-no-repeat bg-cover bg-center border-2 border-withe-600 "
                       style={{
                         backgroundImage: `URL(${selectedProducts?.thumbnail})`,
                       }}
@@ -136,7 +135,7 @@ export const ProductDetail = () => {
                     >
                     </div>
                     <div
-                      className="justify-center bg-no-repeat bg-cover bg-center"
+                      className="justify-center bg-no-repeat bg-cover bg-center border-2 border-withe-600"
                       style={{
                         backgroundImage: `URL(${img.image})`,
                       }}
@@ -147,7 +146,7 @@ export const ProductDetail = () => {
               }
               return (
                 <div
-                  className="justify-center bg-no-repeat bg-cover bg-center"
+                  className="justify-center bg-no-repeat bg-cover bg-center "
                   style={{
                     backgroundImage: `URL(${img.image})`,
                   }}
