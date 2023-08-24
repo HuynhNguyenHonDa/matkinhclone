@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Spinner } from "../../common/Spinner";
+import { Card } from "../Card/Card";
 import { ProductOrderedModel } from "../../models/productOrdered";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { getProductByIdAsync } from "../../redux/slice/productSlice/productSlice";
@@ -10,6 +11,7 @@ import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
+import { Divider } from "@mui/material";
 import './productdetail.css';
 import { SnackbarCustom } from "../../shareComponent/SnackBarCustom";
 import { Box, duration } from "@mui/material";
@@ -17,11 +19,18 @@ import InnerImageZoom from "react-inner-image-zoom";
 import 'react-inner-image-zoom/lib/InnerImageZoom/styles.min.css';
 
 
+
 export const ProductDetail = () => {
   const dispatch = useAppDispatch();
   const [isLoading, setisLoading] = useState(false);
   const [openSackBar, setOpenSackBar] = useState(false);
   const loadingStatus = useAppSelector((state) => state.product.status);
+
+
+  //betseler
+  const bestSaleProduct = useAppSelector(
+    (state) => state.product.bestSellerProds
+  );
 
 
   const handleAddToBag = () => {
@@ -117,8 +126,18 @@ export const ProductDetail = () => {
       ) : (
         <div className="h-full md:flex py-16 p-2 md:pt-20">
           <div className="md:w-1/2 grid grid-cols-4 grid-flow-col md:grid-rows-5 gap-2">
-            <div className="border-2 border-withe-600 h-60 md:h-full md:col-span-4 col-span-3 row-span-4 justify-center bg-no-repeat bg-cover bg-center">
-              <InnerImageZoom src={currentThumbnail ?? ""} zoomSrc={currentThumbnail ?? ""} zoomScale={1 ?? ""}/>
+            <div className="md:h-full md:col-span-4 col-span-3 row-span-4 justify-center bg-no-repeat bg-cover bg-center">
+              <InnerImageZoom
+                src={currentThumbnail ?? ""}
+                zoomSrc={currentThumbnail ?? ""}
+                zoomScale={1 ?? ""} 
+                // height={1000 ?? ""}
+                // width={1000 ?? ""}
+                hasSpacer={true ?? ""}
+                zoomPreload={true ?? ""}
+                fadeDuration={350 ?? ""}
+                // fullscreenOnMobile={true ?? ""}
+                />
             </div>
             {selectedProducts?.images.slice(0, 3).map((img, index) => {
               if (index === 0) {
@@ -191,7 +210,7 @@ export const ProductDetail = () => {
                 </div>
 
                 <div className="flex text-xs md:text-md">
-                  <p className="uppercase">Số lượng:</p>
+                  <p className="uppercase my--1">Số lượng:</p>
                   <p className="uppercase px-5 md:px-20 text-center">
                     {selectedProducts?.colors.find(
                       (col) => col.label === selectedProductColor
@@ -208,9 +227,10 @@ export const ProductDetail = () => {
                   </p>
                 </div>
 
-                <div className="flex text-xs md:text-md">
+                <div className="text-xs md:text-md">
                   <p className="uppercase mota">Mô tả chi tiết:</p>
-                  <p className=" px-5 md:px-20">
+                  {/* <p className=" px-5 md:px-20"> */}
+                  <p className="text-base text-justify my-1">
                     {selectedProducts?.content ? (
                       <div
                         dangerouslySetInnerHTML={{
@@ -249,6 +269,22 @@ export const ProductDetail = () => {
               duration={2000} severity="success" />
           </div>
         </div>
+      )}
+
+      <Divider className="pt-5" color={"#efebe9"}>
+        <p className="p-5 font-sans font-montserrat font-serif text-xl md:text-2xl uppercase text-black">
+          CÁC SẢN PHẨM KHÁC
+        </p>
+      </Divider>
+      {!isLoading ? (
+        <CarouselCustom startSpace="65%" className="p-2 gap-5">
+          {bestSaleProduct &&
+            bestSaleProduct.map((prod) => {
+              return <Card {...prod} />;
+            })}
+        </CarouselCustom>
+      ) : (
+        <Spinner />
       )}
 
     </div>

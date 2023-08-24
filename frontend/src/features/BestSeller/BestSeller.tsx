@@ -42,7 +42,7 @@ export const BestSeller = () => {
       </div>
       <p
         onClick={handleMoreBestSellerProds}
-        className="text-center cursor-pointer text-sm py-10 font-thin"
+        className="text-center cursor-pointer text-sm py-10 font-sans font-montserrat font-serif"
       >
         {!isShowAllBestSellerProd ? "XEM THÊM" : "Ẩn"}
       </p>

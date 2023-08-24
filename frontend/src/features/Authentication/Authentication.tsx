@@ -15,7 +15,7 @@ export const Authentication = ({ formSelect = formList.login }) => {
   };
   return (
     <div className="text-center text-slate-800 md:h-full h-screen">
-      <h1 className="text-md md:text-xl font-bold">Welcom to Bao Tin</h1>
+      <h1 className="text-md md:text-xl font-sans font-montserrat font-serif">Welcom to Bao Tin</h1>
       {formSelected === formList.login && <Login />}
       {formSelected === formList.register && <Register />}
       <div className="flex gap-5 p-10 justify-between text-sm">

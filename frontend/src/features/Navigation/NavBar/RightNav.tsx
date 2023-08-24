@@ -28,7 +28,7 @@ const RightNav = () => {
           onClick={triggerShoppingcard}
         >
           <FiShoppingCart size={20} />
-          <span className="absolute px-6 text-red-500 font-bold text-xs">
+          <span className="absolute px-6 text-red-500 font-sans font-montserrat font-serif text-xs">
             {totalOrder}
           </span>
         </div>

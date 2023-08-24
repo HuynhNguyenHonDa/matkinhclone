@@ -27,7 +27,7 @@ const CustomerSupport = () => {
             return (
               <div className="px-5 max-w-md md:max-w-lg text-center">
                 <div className="">
-                  <span className="py-5 text-md font-bold uppercase md:whitespace">
+                  <span className="py-5 text-md font-sans font-montserrat font-serif uppercase md:whitespace">
                     {item.title}
                   </span>
                 </div>

@@ -111,11 +111,11 @@ export const ProductFilter = () => {
             onClick={() => {
               setIsOpenFilterModal(true);
             }}
-            className="p-5 font-semibold text-2xl hover:cursor-pointer hover:scale-105 uppercase text-shadow"
+            className="w-full p-5 font-sans font-montserrat font-serif text-2xl hover:cursor-pointer hover:scale-105 uppercase text-shadow animate-pulse font-bold whitespace-nowrap"
           >
-            Chọn Kính Phù Hợp
+            &#x1F449; Chọn Kính Phù Hợp 
           </p>
-          <p className="text-center p-5 m-auto text-md font-light">
+          <p className="text-center p-5 m-auto text-md font-sans font-montserrat font-serif">
             {recommendDescription}
           </p>
         </div>
@@ -148,7 +148,7 @@ export const ProductFilter = () => {
             <>
               <div
                 onClick={handlePrevStep}
-                className="p-2 hover:cursor-pointer font-bold"
+                className="p-2 hover:cursor-pointer font-sans font-montserrat font-serif"
               >
                 <KeyboardArrowLeftIcon />
               </div>
@@ -160,7 +160,7 @@ export const ProductFilter = () => {
               </div>
               <div
                 onClick={handleNextStep}
-                className="p-2 hover:cursor-pointer font-bold invisible "
+                className="p-2 hover:cursor-pointer font-sans font-montserrat font-serif invisible "
               >
                 <KeyboardArrowLeftIcon />
               </div>
@@ -169,7 +169,7 @@ export const ProductFilter = () => {
             <>
               <div
                 onClick={handlePrevStep}
-                className={`p-2 hover:cursor-pointer font-bold ${
+                className={`p-2 hover:cursor-pointer font-sans font-montserrat font-serif ${
                   currentStep === 0 ? "invisible" : ""
                 }`}
               >
@@ -177,13 +177,13 @@ export const ProductFilter = () => {
               </div>
               <div
                 onClick={handleCloseModal}
-                className="border-2 p-2 text-center w-40 rounded-2xl hover:cursor-pointer text-white hover:bg-white bg-red-500 hover:text-red-400 font-bold hover:border-red-500"
+                className="border-2 p-2 text-center w-40 rounded-2xl hover:cursor-pointer text-white hover:bg-white bg-red-500 hover:text-red-400 font-sans font-montserrat font-serif hover:border-red-500"
               >
                 Close
               </div>
               <div
                 onClick={handleNextStep}
-                className={`p-2 hover:cursor-pointer font-bold ${
+                className={`p-2 hover:cursor-pointer font-sans font-montserrat font-serif ${
                   currentStep === 0 ? "invisible" : ""
                 }`}
               >

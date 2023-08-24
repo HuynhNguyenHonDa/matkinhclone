@@ -23,7 +23,7 @@ export const BlogDetails = () => {
         ></div>
       </div>
       <div className="w-2/3 m-auto">
-        <h2 className="md:p-10 text-xl py-10 md:text-5xl font-semibold">{blogDetail?.title}</h2>
+        <h2 className="md:p-10 text-xl py-10 md:text-5xl font-sans font-montserrat font-serif">{blogDetail?.title}</h2>
         <div
           dangerouslySetInnerHTML={{
             __html: blogDetail?.body ? blogDetail?.body : "Not Found Content!",

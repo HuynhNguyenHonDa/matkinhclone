@@ -84,7 +84,7 @@ const TopBar = () => {
 
   return (
     <div className="fixed md:static w-full z-20">
-      <div className="hidden md:flex justify-between p-2 font-light bg-[#1E90FF] text-black overflow-hidden">
+      <div className="hidden md:flex justify-between p-2 Montserrat,sans-serif bg-[#1E90FF] text-black overflow-hidden">
         <div className="flex justify-between gap-2 self-center px-10">
           <div className="p-1">
             <BsTelephone />
@@ -92,7 +92,7 @@ const TopBar = () => {
           <p className="w-40 tblack">0983 523 067</p>
         </div>
         <div className="w-full z-0 self-center overflow-hidden">
-          <div className="uppercase text-black font-semibold welcomeAnimation text-xs md:text-md right-0">
+          <div className="uppercase text-black  welcomeAnimation text-xs md:text-md right-0 animate-pulse font-bold">
             MẮT KÍNH BẢO TÍN kính chào quý khách
           </div>
         </div>
@@ -101,7 +101,7 @@ const TopBar = () => {
             <div className="flex gap-2 p-1 px-8">
               <span>Hi! {userName},</span>
               <span
-                className="hover:cursor-pointer hover:font-bold"
+                className="hover:cursor-pointer hover:font-sans font-montserrat font-serif"
                 onClick={handleLogout}
               >
                 Đăng Xuất
@@ -117,7 +117,7 @@ const TopBar = () => {
           )} */}
         </div>
       </div>
-      <div className="md:hidden flex justify-between px-2 font-light bg-[#1E90FF] text-white">
+      <div className="md:hidden flex justify-between px-2 font-sans font-montserrat font-serif bg-[#1E90FF] text-white">
         <div onClick={triggerMenu} className="m-2 z-10">
           <Menu></Menu>
         </div>
@@ -139,7 +139,7 @@ const TopBar = () => {
                     return router.path === "/Product" ? (
                       <li
                         onClick={handleOpenTreeCategoryMobile}
-                        className="uppercase text-xs md:text-md font-semibold text-black p-5 justify-between"
+                        className="uppercase text-xs md:text-md font-sans font-montserrat font-serif text-black p-5 justify-between"
                       >
                         <div>
                           <div className="flex justify-between self-center">
@@ -162,7 +162,7 @@ const TopBar = () => {
                             categoryTree?.map((cat) => {
                               return (
                                 <div className="">
-                                  <h3 className="text-sm p-5 w-full font-semibold md:text-lg">
+                                  <h3 className="text-sm p-5 w-full font-sans font-montserrat font-serif md:text-lg">
                                     {cat.name}
                                   </h3>
                                   <ul>
@@ -172,7 +172,7 @@ const TopBar = () => {
                                           onClick={() =>
                                             handleClickOnCategory(child.id ?? 0)
                                           }
-                                          className="text-xs font-normal p-5 hover:cursor-pointer"
+                                          className="text-xs font-sans font-montserrat font-serif p-5 hover:cursor-pointer"
                                         >
                                           {child.name}
                                         </li>
@@ -185,7 +185,7 @@ const TopBar = () => {
                         </div>
                       </li>
                     ) : (
-                      <li className="uppercase text-xs md:text-md font-semibold text-black p-5">
+                      <li className="uppercase text-xs md:text-md font-sans font-montserrat font-serif text-black p-5">
                         <Link to={router.path}>{router.name}</Link>
                       </li>
                     );
@@ -225,14 +225,14 @@ const TopBar = () => {
           </div>
         )}
         <div className="w-full z-0 self-center overflow-hidden">
-          <div className="uppercase text-white font-semibold welcomeAnimation text-xs md:text-md right-0">
+          <div className="uppercase text-white font-sans font-montserrat font-serif welcomeAnimation text-xs md:text-md right-0">
             MẮT KÍNH BẢO TÍN kính chào quý khách
           </div>
         </div>
         <div className="flex my-3 z-10">
           {isOpenShoppingCart ? <ShoppingCart ref={shoppingCartRef} /> : <></>}
           <FiShoppingCart size={16} onClick={triggerShoppingCart} />
-          <span className="absolute top-0.5 right-1 text-red-500 font-bold text-xs">
+          <span className="absolute top-0.5 right-1 text-red-500 font-sans font-montserrat font-serif text-xs">
             {totalOrder}
           </span>
         </div>

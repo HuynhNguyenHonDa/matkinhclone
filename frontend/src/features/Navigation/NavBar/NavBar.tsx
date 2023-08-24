@@ -42,17 +42,17 @@ const NavBar = () => {
               <li
                 onMouseOver={() => handleMouseOver()}
                 onMouseLeave={() => handleMouseOut()}
-                className="uppercase hover:text-blue-400 text-xs md:text-md lg:text-lg"
+                className="uppercase  hover:text-blue-400 text-xs md:text-md lg:text-lg"
               >
                 <Link to={router.path}>{router.name}</Link>
                 {isHovering && (
                   <div
-                    className={`absolute text-black z-50 bg-stone-100 right-20 p-5 gap-5 grid grid-cols-5 text-center`}
+                    className={`absolute text-black z-50 bg-white  right-20 pr-4 pt-7 pl-0 pr-0  gap-7 w-1/03 grid grid-cols-5 text-left  ml-20`}
                   >
                     {categoryTree?.map((cat) => {
                       return (
                         <div className="">
-                          <h3 className="text-sm  w-full font-semibold md:text-lg">
+                          <h3 className="text-sm w-full text-center md:text-lg ">
                             {cat.name}
                           </h3>
                           <ul>
@@ -62,7 +62,7 @@ const NavBar = () => {
                                   onClick={() =>
                                     handleClickOnCategory(child.id ?? 0)
                                   }
-                                  className="text-xs font-semibold p-2 hover:text-blue-500 hover:cursor-pointer "
+                                  className="text-xs p-1 hover:text-blue-500 hover:cursor-pointer "
                                 >
                                   {child.name}
                                   <br></br>

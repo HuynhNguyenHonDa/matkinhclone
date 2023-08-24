@@ -32,11 +32,11 @@ export const SupperCombo = () => {
             onClick={handleOpenMoreInform}
             className="mx-5 relative bg-white md:w-1/2 p-10 md:mx-20 rounded-xl shadow-md hover:cursor-pointer"
           >
-            <span className="text-lg md:text-3xl font-bold uppercase">
+            <span className="text-lg md:text-3xl font-sans font-montserrat font-serif uppercase">
               {blog[0].title}
             </span>
             <div
-              className="py-5 font-thin md:text-md text-xs"
+              className="py-5 font-sans font-montserrat font-serif md:text-md text-xs"
               dangerouslySetInnerHTML={{
                 __html: blog[0].body,
               }}

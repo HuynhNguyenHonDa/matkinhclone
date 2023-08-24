@@ -47,15 +47,15 @@ export const BlogList = () => {
                       ></Box>
                     </div>
                     <div className="ml-5">
-                      <h3 className="font-bold text-sm md:text-xl">
+                      <h3 className="font-sans font-montserrat font-serif text-sm md:text-xl">
                         {blog.title}
                       </h3>
                       <p className="text-xs md:text-md">{blog.preview_body}</p>
                       <div className="flex justify-between pt-2">
-                        <p className="font-extralight text-xs">
+                        <p className="font-sans font-montserrat font-serif text-xs">
                           {blog.date_display}
                         </p>
-                        <p className="text-xs font-bold">
+                        <p className="text-xs font-sans font-montserrat font-serif">
                           {blog.author_display}
                         </p>
                       </div>
@@ -70,7 +70,7 @@ export const BlogList = () => {
           onClick={() => {
             setIsShowFull(!isShowFull);
           }}
-          className="uppercase font-light text-xs text-center hover:cursor-pointer"
+          className="uppercase font-sans font-montserrat font-serif text-xs text-center hover:cursor-pointer"
         >
           {!isShowFull ? "xem thêm" : "Ẩn"}
         </p>

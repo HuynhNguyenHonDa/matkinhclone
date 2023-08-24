@@ -25,11 +25,11 @@ export const CommentCard = (card: CommentCardProps, { ...props }) => {
             size="small"
             readOnly
           />
-          <p className="font-thin text-xs">{card.dateCreate}</p>
+          <p className="font-sans font-montserrat font-serif text-xs">{card.dateCreate}</p>
         </div>
       </div>
       <div onClick={() => handleShowFull()} className="px-4 cursor-pointer">
-        <h1 className="font-bold">{card.title}</h1>
+        <h1 className="font-sans font-montserrat font-serif">{card.title}</h1>
         <p
           className={`${
             isShowingFullContent ? "" : "overflow-hidden max-h-10"
