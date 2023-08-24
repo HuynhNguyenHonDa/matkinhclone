@@ -92,8 +92,8 @@ const TopBar = () => {
           <p className="w-40 tblack">0983 523 067</p>
         </div>
         <div className="w-full z-0 self-center overflow-hidden">
-          <div className="uppercase text-black  welcomeAnimation text-xs md:text-md right-0 animate-pulse font-bold">
-            MẮT KÍNH BẢO TÍN kính chào quý khách
+          <div className="uppercase text-black  welcomeAnimation text-xs md:text-md right-0 font-bold">
+            MẮT KÍNH BẢO TÍN Kính Chào Quý Khách
           </div>
         </div>
         <div ref={wrapperRef} className="flex gap-2 p-1 px-8 z-10">
