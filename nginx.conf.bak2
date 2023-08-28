@@ -1,0 +1,100 @@
+error_log  /var/log/nginx/nginx_error.log  warn;
+server {
+    listen 80;
+    # server_name _;
+    client_max_body_size 12M;
+    #return 301 https://$host$request_uri;
+    location / {
+        proxy_set_header   X-Forwarded-For $remote_addr;
+        proxy_set_header   Host $http_host;
+        proxy_pass         "http://103.90.227.238:3000/";
+    }
+
+    location /api/ {
+        proxy_set_header   X-Forwarded-For $remote_addr;
+        proxy_set_header   Host $http_host;
+        proxy_pass         "http://103.90.227.238:8000/api/";
+    }
+
+    # location /ckeditor/ {
+    #     proxy_set_header   X-Forwarded-For $remote_addr;
+    #     proxy_set_header   Host $http_host;
+    #     proxy_pass         "http://103.90.227.238:8001/ckeditor/";
+    # }
+
+    location /_admin/ {
+        proxy_set_header   X-Forwarded-For $remote_addr;
+        proxy_set_header   Host $http_host;
+        proxy_pass         "http://103.90.227.238:8000/_admin/";
+        client_max_body_size 12M;
+    }
+
+    location /static_backend/ {
+        alias /var/www/mywebsite/backend/staticfiles/;
+    }
+
+    location /static/ {
+        proxy_set_header   X-Forwarded-For $remote_addr;
+        proxy_set_header   Host $http_host;
+        proxy_pass         "http://103.90.227.238:3000/static/";
+    }
+
+    location /media/ {
+        alias /var/www/mywebsite/backend/media/;
+    }
+
+    location /.well-known/ {
+        alias /var/www/.well-known/;
+    }
+}
+
+#server {
+#    listen 443 ssl;
+#
+#    #ssl_certificate /cert/matkinhbaotin.com.pem;
+#    #ssl_certificate_key /cert/private.key;
+#
+#    ssl_protocols TLSv1.2 TLSv1.3;  # Adjust protocols as needed
+#
+#    # Optional: Include CA bundle
+#    #ssl_client_certificate /cert/ca-bundle.crt;
+#
+#    location / {
+#        proxy_set_header   X-Forwarded-For $remote_addr;
+#        proxy_set_header   Host $http_host;
+#        proxy_pass         "http://103.90.227.238:3000/";
+#    }
+#
+#    location /api/ {
+#        proxy_set_header   X-Forwarded-For $remote_addr;
+#        proxy_set_header   Host $http_host;
+#        proxy_pass         "http://103.90.227.238:8000/api/";
+#    }
+#
+#    # location /ckeditor/ {
+#    #     proxy_set_header   X-Forwarded-For $remote_addr;
+#    #     proxy_set_header   Host $http_host;
+#    #     proxy_pass         "http://103.90.227.238:8001/ckeditor/";
+#    # }
+#
+#    location /_admin/ {
+#        proxy_set_header   X-Forwarded-For $remote_addr;
+#        proxy_set_header   Host $http_host;
+#        proxy_pass         "http://103.90.227.238:8000/_admin/";
+#        client_max_body_size 12M;
+#    }
+#
+#    location /static_backend/ {
+#        alias /var/www/mywebsite/backend/staticfiles/;
+#    }
+#
+#    location /static/ {
+#        proxy_set_header   X-Forwarded-For $remote_addr;
+#        proxy_set_header   Host $http_host;
+#        proxy_pass         "http://103.90.227.238:3000/static/";
+#    }
+#
+#    location /media/ {
+#        alias /var/www/mywebsite/backend/media/;
+#    }
+#}
