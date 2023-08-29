@@ -56,7 +56,7 @@ INSTALLED_APPS = [
     'apps.product',
     'apps.user',
     'apps.services',
-    "sslserver",
+    # "sslserver",
 ]
 
 MIDDLEWARE = [
