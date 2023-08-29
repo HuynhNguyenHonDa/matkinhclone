@@ -21,6 +21,7 @@ run_server() {
   # python manage.py runserver 0.0.0.0:8000
   gunicorn core.wsgi:application --bind 0.0.0.0:8000
   # gunicorn core.wsgi:application --bind 0.0.0.0:8000 --certfile ./cert/matkinhbaotin.com.pem --keyfile ./cert/private.key
+  # gunicorn core.wsgi:application --bind 0.0.0.0:8000 --certfile ./cert/matkinhbaotin.com.pem --keyfile ./cert/private.key
 }
 
 migrate;
