@@ -19,17 +19,17 @@ export const CommentCard = (card: CommentCardProps, { ...props }) => {
       <div className="flex">
         <Avatar alt="Travis Howard" src={card.avatarURL} />
         <div className="px-2">
-          <p className="truncate text-xs lg:text-lg font-semibold">{card.userName}</p>
+          <p className="truncate text-xs lg:text-lg ">{card.userName}</p>
           <Rating
             value={4}
             size="small"
             readOnly
           />
-          <p className="font-sans font-montserrat font-serif text-xs">{card.dateCreate}</p>
+          <p className=" text-xs">{card.dateCreate}</p>
         </div>
       </div>
       <div onClick={() => handleShowFull()} className="px-4 cursor-pointer">
-        <h1 className="font-sans font-montserrat font-serif">{card.title}</h1>
+        <h1 className="">{card.title}</h1>
         <p
           className={`${
             isShowingFullContent ? "" : "overflow-hidden max-h-10"

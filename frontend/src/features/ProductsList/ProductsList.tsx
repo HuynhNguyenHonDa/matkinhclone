@@ -36,7 +36,7 @@ export const ProductList = () => {
       {productFilter && productFilter.length > 0 ? (
         <>
           <Divider className="pt-5" color={"#efebe9"}>
-            <p className="p-5 font-sans font-montserrat font-serif text-xl md:text-2xl uppercase text-black">
+            <p className="p-5  text-xl md:text-2xl uppercase text-black">
             các sản phẩm phù hợp
             </p>
           </Divider>
@@ -61,7 +61,7 @@ export const ProductList = () => {
           </p>
           <p className="text-center">Không tìm thấy kết quả!</p> */}
           <Divider className="pt-5" color={"#efebe9"}>
-            <p className="p-5 font-sans font-montserrat font-serif text-xl md:text-2xl uppercase text-black">
+            <p className="p-5 text-xl md:text-2xl uppercase text-black">
             SẢN PHẨM
             </p>
           </Divider>
@@ -83,7 +83,7 @@ export const ProductList = () => {
         </>
       )}
       <Divider className="pt-5" color={"#efebe9"}>
-        <p className="p-5 font-sans font-montserrat font-serif text-xl md:text-2xl uppercase text-black">
+        <p className="p-5  text-xl md:text-2xl uppercase text-black">
           BEST SELLER
         </p>
       </Divider>

@@ -84,10 +84,10 @@ export const Promotion = () => {
         }}
       ></div>
       <div className="border-2 p-10 md:p-20 m-auto relative w-80 md:w-1/2 bg-slate-50 rounded-xl mb-10 shadow-xl top-5 opacity-80">
-        <span className="font-sans font-montserrat font-serif text-xl uppercase">
+        <span className=" text-xl uppercase">
           {promotionInformation?.title}
         </span>
-        <p className="font-sans font-montserrat font-serif py-5">{promotionInformation?.descripton}</p>
+        <p className=" py-5">{promotionInformation?.descripton}</p>
         <FormControl className="w-full" variant="standard">
           {confirmModal()}
           <TextField

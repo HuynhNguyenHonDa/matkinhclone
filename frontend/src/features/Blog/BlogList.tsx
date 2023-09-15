@@ -34,11 +34,11 @@ export const BlogList = () => {
                   >
                     <div className="overflow-hidden ">
                       <Box
-                        className="m-auto"
+                        className="m-auto border border-gray-300 rounded-lg"
                         component="img"
                         sx={{
                           height: 300,
-                          maxHeight: { xs: 170, md: 170 },
+                          maxHeight: { xs: 170, md: 270 },
                           // maxWidth: { xs: 300, md: 300 },
                           width: {xs: 350, md: 350}
                         }}
@@ -47,15 +47,15 @@ export const BlogList = () => {
                       ></Box>
                     </div>
                     <div className="ml-5">
-                      <h3 className="font-sans font-montserrat font-serif text-sm md:text-xl">
+                      <h3 className=" text-sm md:text-xl">
                         {blog.title}
                       </h3>
                       <p className="text-xs md:text-md">{blog.preview_body}</p>
                       <div className="flex justify-between pt-2">
-                        <p className="font-sans font-montserrat font-serif text-xs">
+                        <p className=" text-xs">
                           {blog.date_display}
                         </p>
-                        <p className="text-xs font-sans font-montserrat font-serif">
+                        <p className="text-xs">
                           {blog.author_display}
                         </p>
                       </div>
@@ -70,7 +70,7 @@ export const BlogList = () => {
           onClick={() => {
             setIsShowFull(!isShowFull);
           }}
-          className="uppercase font-sans font-montserrat font-serif text-xs text-center hover:cursor-pointer"
+          className="uppercase text-xs text-center hover:cursor-pointer"
         >
           {!isShowFull ? "xem thêm" : "Ẩn"}
         </p>

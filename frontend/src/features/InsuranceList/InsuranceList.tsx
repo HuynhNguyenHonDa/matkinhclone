@@ -24,7 +24,7 @@ export const InsuranceList = () => {
                   return (
                     <div>
                       <Typography
-                        className="font-sans font-montserrat font-serif"
+                        className=""
                         variant="subtitle1"
                         color={"#bcaaa4"}
                       >

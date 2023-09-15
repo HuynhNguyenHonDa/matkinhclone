@@ -137,12 +137,22 @@ class Product(models.Model):
     origin_price = models.FloatField(default=0.0)
     thumbnail = models.ImageField(upload_to='store/images', default='store/images/default.png')
     content = RichTextUploadingField(blank=True, null=True)
-    no_of_order = models.PositiveIntegerField(default=1)
+    no_of_order = models.PositiveIntegerField()
     colors = models.ManyToManyField(Corlor, through='ProductColor')
     gender = models.ManyToManyField(Gender, related_name='product_gender')
     form_face = models.ManyToManyField(FormFace, related_name='product_form_face')
     glasses_shape = models.ManyToManyField(GlassesShape, related_name='product_glasses_shape')
     glasses_material = models.ManyToManyField(GlassesMaterial, related_name='product_glasses_material')
+
+    def save(self, *args, **kwargs):
+        # Kiểm tra xem có giá trị cho no_of_order hay không
+        if not self.no_of_order:
+            # Tìm giá trị lớn nhất hiện có trong cơ sở dữ liệu
+            max_order = Product.objects.aggregate(models.Max('no_of_order'))['no_of_order__max']
+            # Gán giá trị cho no_of_order
+            self.no_of_order = max_order + 1 if max_order else 1
+
+        super(Product, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.name

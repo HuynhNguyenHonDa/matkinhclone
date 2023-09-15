@@ -272,7 +272,7 @@ export const ProductDetail = () => {
       )}
 
       <Divider className="pt-5" color={"#efebe9"}>
-        <p className="p-5 font-sans font-montserrat font-serif text-xl md:text-2xl uppercase text-black">
+        <p className="p-5  text-xl md:text-2xl uppercase text-black">
           CÁC SẢN PHẨM KHÁC
         </p>
       </Divider>

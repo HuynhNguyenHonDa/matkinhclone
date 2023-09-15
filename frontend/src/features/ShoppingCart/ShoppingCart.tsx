@@ -101,7 +101,7 @@ export const ShoppingCart = React.forwardRef((props, ref: any) => {
           x
         </div>
         <div className="p-10 md:pt-20 m-auto">
-          <span className="font-sans font-montserrat font-serif text-center text-xl uppercase">
+          <span className=" text-center text-xl uppercase">
             Nhập thông tin đặt hàng
           </span>
           {/* <p className="font-thin py-5">{promotionInformation?.descripton}</p> */}
@@ -224,7 +224,7 @@ export const ShoppingCart = React.forwardRef((props, ref: any) => {
         <Typography variant="h5" color="GrayText">
           Tổng:{" "}
           <NumericFormat
-            className="md:px-10 font-sans font-montserrat font-serif"
+            className="md:px-10 "
             value={totalCartPrice}
             displayType={"text"}
             thousandSeparator={true}
