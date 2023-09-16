@@ -195,9 +195,9 @@ CKEDITOR_IMAGE_BACKEND = 'pillow'
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'full',
+        "removePlugins": "exportpdf",
     },
 }
-
 
 
 EMAIL_SENDER_NAME = "MATKINHBAOTIN@gmail.com"
