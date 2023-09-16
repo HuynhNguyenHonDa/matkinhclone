@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'drf_spectacular',
     'mptt',
     'ckeditor',
+    'ckeditor_uploader',
     'django_filters',
     'colorfield',
 
