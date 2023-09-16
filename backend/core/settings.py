@@ -192,6 +192,12 @@ STRPTIME_FORMAT = "%m/%d/%Y, %H:%M:%S"
 CKEDITOR_BASEPATH = f'{STATIC_URL}ckeditor/ckeditor/'
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_IMAGE_BACKEND = 'pillow'
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+    },
+}
+
 
 
 EMAIL_SENDER_NAME = "MATKINHBAOTIN@gmail.com"
