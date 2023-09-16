@@ -106,7 +106,7 @@ export const Card = (card: ProductModel, { ...props }) => {
               {card.name}
             </span>
           </div>
-          <div className="font-sans font-montserrat font-serif text-xs md:text-md p-3">
+          <div className=" text-xs md:text-md p-3">
             <div>
               {!!card.origin_price && card.origin_price !== 0 && (
                 <NumericFormat
@@ -134,7 +134,7 @@ export const Card = (card: ProductModel, { ...props }) => {
       </div>
       <div
         onClick={handleAddToBag}
-        className={`uppercase p-2 text-center w-5/6 m-auto bg-gradient-to-r from-[#1E90FF] to-[#0b7def] text-white font-sans font-montserrat font-serif rounded-xl`}
+        className={`uppercase p-2 text-center w-5/6 m-auto bg-gradient-to-r from-[#1E90FF] to-[#0b7def] text-white  rounded-xl`}
       >
         <span className="">Thêm vào giỏ hàng </span>
 
