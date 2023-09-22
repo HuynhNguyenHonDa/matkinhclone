@@ -42,7 +42,7 @@ export const productFetchAsync = createAsyncThunk(
   async () => {
     let products: Array<ProductModel> = [];
     await axios
-      .get(`http://103.90.227.238/api/product/`)
+      .get(`https://matkinhbaotin.com/api/product/`)
       .then((res) => {
         products = res.data;
         // getProduct(products);

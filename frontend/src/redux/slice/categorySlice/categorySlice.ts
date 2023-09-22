@@ -24,7 +24,7 @@ export const categoryFetchAsync = createAsyncThunk(
   async () => {
     let categories: Array<CategoryModel> = [];
     await axios
-      .get(`http://103.90.227.238/api/category/`)
+      .get(`https://matkinhbaotin.com/api/category/`)
       .then((res) => {
         categories = res.data;
         getCategory(categories);
