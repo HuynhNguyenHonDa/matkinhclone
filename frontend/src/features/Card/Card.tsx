@@ -90,8 +90,8 @@ export const Card = (card: ProductModel, { ...props }) => {
           component="img"
           sx={{
             height: 400,
-            maxHeight: { xs: 300, },
-            maxWidth: { xs: 300, },
+            maxHeight: { xs: 280, md: 280 },
+            maxWidth: { xs: 280, md: 280 },
             // maxHeight: { xs: 300, md: 340 },
             // maxWidth: { xs: 300, md: 500 },
           }}
@@ -102,7 +102,7 @@ export const Card = (card: ProductModel, { ...props }) => {
       <div className="break-before-all py-2 flex justify-between">
         <div className="p-2">
           <div>
-            <span className="break-all text-md truncate w-1/2">
+            <span className="break-all text-md truncate w-1/2 w-64 h-32 overflow-auto">
               {card.name}
             </span>
           </div>

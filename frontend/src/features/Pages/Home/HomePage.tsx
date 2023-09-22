@@ -56,7 +56,7 @@ export const HomePage = () => {
         ></div>
         <div className="z-10 text-center p-20  hover:cursor-pointer">
           <p className="uppercase Montserrat,sans-serif text-2xl text-black-700 text-shadow animate-pulse font-bold text-black-800 whitespace-nowrap">
-            Chính sách bảo hành
+            Chính Sách Bảo Hành
           </p>
         </div>
       </div>

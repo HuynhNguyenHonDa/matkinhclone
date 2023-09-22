@@ -31,7 +31,7 @@ export const SupperCombo = () => {
           ></div>
           <div
             onClick={handleOpenMoreInform}
-            className=" mx-5 mt-10 mb-10 relative bg-white bg-opacity-40 md:w-1/2 p-10 md:mx-20 rounded-xl hover:cursor-pointer"
+            className="ml-0 mr-2 mx-5 mt-10 mb-10 relative bg-white bg-opacity-40 md:w-1/2 p-10 md:mx-20 rounded-xl hover:cursor-pointer"
           >
             <span className="text-lg md:text-4xl font-bold uppercase">
               {blog[0].title}

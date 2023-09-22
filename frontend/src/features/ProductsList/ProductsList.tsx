@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 // import { productList } from "../../mock/ProductsList";
+// import Slider from "react-slick";
 import { Card } from "../Card/Card";
 import { CarouselCustom } from "../../shareComponent/Carousel";
 import {
@@ -9,6 +10,7 @@ import {
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { Spinner } from "../../common/Spinner";
 import { Divider } from "@mui/material";
+
 
 export const ProductList = () => {
   const getLoadingState = useAppSelector(loadingState);
@@ -88,7 +90,7 @@ export const ProductList = () => {
         </p>
       </Divider>
       {!isLoading ? (
-        <CarouselCustom startSpace="65%" className="p-2 gap-5">
+        <CarouselCustom startSpace="65%" className="p-2 gap-5 ">
           {bestSaleProduct &&
             bestSaleProduct.map((prod) => {
               return <Card {...prod} />;

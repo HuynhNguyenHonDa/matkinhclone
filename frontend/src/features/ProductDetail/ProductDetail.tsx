@@ -130,14 +130,14 @@ export const ProductDetail = () => {
               <InnerImageZoom
                 src={currentThumbnail ?? ""}
                 zoomSrc={currentThumbnail ?? ""}
-                zoomScale={1 ?? ""} 
+                zoomScale={1 ?? ""}
                 // height={1000 ?? ""}
                 // width={1000 ?? ""}
                 hasSpacer={true ?? ""}
                 zoomPreload={true ?? ""}
                 fadeDuration={350 ?? ""}
-                // fullscreenOnMobile={true ?? ""}
-                />
+              // fullscreenOnMobile={true ?? ""}
+              />
             </div>
             {selectedProducts?.images.slice(0, 3).map((img, index) => {
               if (index === 0) {
@@ -277,16 +277,28 @@ export const ProductDetail = () => {
         </p>
       </Divider>
       {!isLoading ? (
-        <CarouselCustom startSpace="65%" className="p-2 gap-5">
+        <CarouselCustom startSpace="65%" className="p-2 gap-5 w-screen  overflow-x-scroll">
+          {/* <div className="flex justify-between p-4">
+
+            <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M20 12c0 .6-.22 1.16-.59 1.59l-5.17 5.17c-.44.44-1.04.7-1.59.7-.55 0-1.15-.26-1.59-.7-.44-.44-.7-1.04-.7-1.59s.26-1.15.7-1.59l2.59-2.59H7c-.55 0-1-.45-1-1s.45-1 1-1h8.24l-2.59-2.59c-.44-.44-.7-1.04-.7-1.59s.26-1.15.7-1.59c.44-.44 1.04-.7 1.59-.7s1.15.26 1.59.7l5.17 5.17c.37.43.59.99.59 1.59z" /></svg>
+            </div>
+
+            <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M6 12c0 .6.22 1.16.59 1.59l5.17 5.17c.44.44 1.04.7 1.59.7s1.15-.26 1.59-.7c.44-.44.7-1.04.7-1.59s-.26-1.15-.7-1.59L9.83 12H17c.55 0 1-.45 1-1s-.45-1-1-1H9.76l2.59-2.59c.44-.44.7-1.04.7-1.59s-.26-1.15-.7-1.59c-.44-.44-1.04-.7-1.59-.7s-1.15.26-1.59.7l-5.17 5.17c-.37.43-.59.99-.59 1.59z" /></svg>
+            </div>
+          </div> */}
           {bestSaleProduct &&
             bestSaleProduct.map((prod) => {
               return <Card {...prod} />;
             })}
         </CarouselCustom>
+
       ) : (
         <Spinner />
-      )}
+      )
+      }
 
-    </div>
+    </div >
   );
 };
